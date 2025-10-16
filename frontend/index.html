@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Bug Tracker</title>
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+            font-family: Arial;
+            padding: 20px;
+        }
+        input, textarea, button {
+            margin-top: 10px;
+            width: 300px;
+            padding: 5px;
+        }
+        button {
+            background-color: teal;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>🐞 AI Bug Tracker</h2>
+
+    <input type="text" id="title" placeholder="Bug title"><br>
+    <textarea id="description" placeholder="Describe the bug"></textarea><br>
+    <button onclick="submitBug()">Submit Bug</button>
+
+    <h3>Result:</h3>
+    <p id="result"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
