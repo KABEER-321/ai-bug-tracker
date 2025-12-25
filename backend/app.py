@@ -14,8 +14,8 @@ load_dotenv() # Load variables from .env
 # 🪄 Loaded from .env file
 HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY")
 
-# Using a standard model with the new router
-API_URL = "https://router.huggingface.co/hf-inference/models/facebook/bart-large-cnn"
+# Using a generative model for bug solving
+API_URL = "https://router.huggingface.co/hf-inference/models/mistralai/Mistral-7B-Instruct-v0.2"
 HEADERS = {"Authorization": f"Bearer {HUGGINGFACE_API_KEY}"}
 
 BUGS_FILE = "bugs.json"
@@ -50,27 +50,38 @@ def add_bug():
         if not title or not description:
             return jsonify({"error": "Title and description are required"}), 400
 
-        # --- Call Hugging Face for summary ---
-        summary = "No summary generated."
+        # --- Call Hugging Face for Solution ---
+        solution = "No solution found."
         try:
-            payload = {"inputs": description}
+            # Crafting a prompt for the instructor model
+            prompt = f"<s>[INST] You are a highly skilled software developer. Provide an exact, step-by-step technical solution to solve this bug:\n\nTitle: {title}\nDescription: {description}\n\nSolution: [/INST]"
+            payload = {
+                "inputs": prompt,
+                "parameters": {"max_new_tokens": 500, "temperature": 0.7}
+            }
             response = requests.post(API_URL, headers=HEADERS, json=payload, timeout=20)
+            
             if response.status_code == 200:
                 result = response.json()
                 if isinstance(result, list) and len(result) > 0:
-                    summary = result[0].get("summary_text", summary)
+                    generated_text = result[0].get("generated_text", "")
+                    # Extract only the part after the prompt
+                    if "[/INST]" in generated_text:
+                        solution = generated_text.split("[/INST]")[1].strip()
+                    else:
+                        solution = generated_text
             elif response.status_code == 401:
-                summary = "HuggingFace API Key invalid or not provided."
+                solution = "HuggingFace API Key invalid or not provided."
             else:
-                summary = f"HuggingFace error: {response.status_code}"
+                solution = f"HuggingFace error: {response.status_code}"
         except Exception as e:
-            summary = f"Could not generate summary: {str(e)}."
+            solution = f"Could not generate solution: {str(e)}."
 
         bug_entry = {
             "id": len(load_bugs()) + 1,
             "title": title,
             "description": description,
-            "summary": summary,
+            "summary": solution, # Keeping the key 'summary' for DB compatibility
             "status": "Open"
         }
 
