@@ -61,5 +61,110 @@
         "description": "My whatsapp is automatically banned , now it is shoeing that you can no longer use whatsapp , what to do?",
         "summary": "My whatsapp is automatically banned , now it is shoeing that you can no longer use whatsapp , what to do? What do you do? Do you have any suggestions on how to get your whatsapp back? If so, please share them with us in the comments below.",
         "status": "Open"
+    },
+    {
+        "id": 10,
+        "title": "Button not working",
+        "description": "The submit button does nothing when clicked. No errors in console.",
+        "summary": "HuggingFace error: 404",
+        "status": "Open"
+    },
+    {
+        "id": 11,
+        "title": "Button not working",
+        "description": "The submit button does nothing when clicked. No errors in console.",
+        "summary": "HuggingFace error: 404",
+        "status": "Open"
+    },
+    {
+        "id": 12,
+        "title": "Button not working",
+        "description": "The submit button does nothing when clicked. No errors in console.",
+        "summary": "HuggingFace error: 404",
+        "status": "Open"
+    },
+    {
+        "id": 13,
+        "title": "Button not working",
+        "description": "The submit button does nothing when clicked. No errors in console.",
+        "summary": "HuggingFace error: 404",
+        "status": "Open"
+    },
+    {
+        "id": 14,
+        "title": "Button not working",
+        "description": "The submit button does nothing when clicked. No errors in console.",
+        "summary": "HuggingFace error: 404",
+        "status": "Open"
+    },
+    {
+        "id": 15,
+        "title": "Button not working",
+        "description": "The submit button does nothing when clicked. No errors in console.",
+        "summary": "HuggingFace error: 410",
+        "status": "Open"
+    },
+    {
+        "id": 16,
+        "title": "Button not working",
+        "description": "The submit button does nothing when clicked. No errors in console.",
+        "summary": "Could not generate solution: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods..",
+        "status": "Open"
+    },
+    {
+        "id": 17,
+        "title": "Button not working",
+        "description": "The submit button does nothing when clicked. No errors in console.",
+        "summary": "Could not generate solution: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods..",
+        "status": "Open"
+    },
+    {
+        "id": 18,
+        "title": "Button not working",
+        "description": "The submit button does nothing when clicked. No errors in console.",
+        "summary": "Could not generate solution: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods..",
+        "status": "Open"
+    },
+    {
+        "id": 19,
+        "title": "Button not working",
+        "description": "The submit button does nothing when clicked. No errors in console.",
+        "summary": "Could not generate solution: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 23.76481747s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.0-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n}\nviolations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.0-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n}\nviolations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\"\n  quota_id: \"GenerateContentInputTokensPerModelPerMinute-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.0-flash\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n}\n, retry_delay {\n  seconds: 23\n}\n].",
+        "status": "Open"
+    },
+    {
+        "id": 20,
+        "title": "Button not working",
+        "description": "The submit button does nothing when clicked. No errors in console.",
+        "summary": "Could not generate solution: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 26.107257938s. [links {\n  description: \"Learn more about Gemini API quotas\"\n  url: \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n}\n, violations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count\"\n  quota_id: \"GenerateContentInputTokensPerModelPerMinute-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.0-flash-exp\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n}\nviolations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.0-flash-exp\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n}\nviolations {\n  quota_metric: \"generativelanguage.googleapis.com/generate_content_free_tier_requests\"\n  quota_id: \"GenerateRequestsPerDayPerProjectPerModel-FreeTier\"\n  quota_dimensions {\n    key: \"model\"\n    value: \"gemini-2.0-flash-exp\"\n  }\n  quota_dimensions {\n    key: \"location\"\n    value: \"global\"\n  }\n}\n, retry_delay {\n  seconds: 26\n}\n].",
+        "status": "Open"
+    },
+    {
+        "id": 21,
+        "title": "Button not working",
+        "description": "The submit button does nothing when clicked. No errors in console.",
+        "summary": "Here's a step-by-step technical solution to diagnose and fix a button that isn't working:\n\n1.  **Confirm Button Accessibility & HTML Structure:**\n    *   **Action:** Open your browser's Developer Tools (F12 or right-click -> Inspect). Go to the \"Elements\" tab.\n    *   **Check:**\n        *   Locate your button in the HTML structure.\n        *   Does it have an `id` or `class` that your JavaScript is trying to target?\n        *   Is the button itself or any of its parent elements styled with `display: none;`, `visibility: hidden;`, `pointer-events: none;`, or does it have the `disabled` attribute? These can prevent interaction.\n        *   In the console, try `document.querySelector('#yourButtonId')` or `document.querySelector('.yourButtonClass')`. It should return the HTML element, not `null`.\n\n2.  **Verify JavaScript File Loading and Execution:**\n    *   **Action:**\n        *   In your main JavaScript file, add `console.log(\"JS script loaded and running.\");` at the very top.\n        *   Check the \"Network\" tab in Developer Tools and ensure your JavaScript file is loaded successfully (status 200).\n    *   **Check:**\n        *   Does \"JS script loaded and running.\" appear in the console? If not, your JS file isn't loading or executing.\n        *   Is your `<script>` tag placed correctly (e.g., at the end of the `<body>` or using `defer`/`async` attributes, or wrapped in a `DOMContentLoaded` event listener if in the `<head>`)? JavaScript attempting to select elements before they exist in the DOM will fail silently.\n\n3.  **Confirm Element Selection in JavaScript:**\n    *   **Action:** In your JavaScript code, immediately after the line where you attempt to select the button (e.g., `const submitButton = document.getElementById('mySubmitButton');`), add `console.log('Selected button element:', submitButton);`.\n    *   **Check:**\n        *   When you refresh the page, does the console log the actual HTML button element, or does it log `null`?\n        *   If it logs `null`, your JavaScript selector (e.g., `getElementById`, `querySelector`) does not match any element in your HTML, or it's trying to select it before the element exists (see step 2). Double-check IDs/classes for typos.\n\n4.  **Validate Event Listener Attachment:**\n    *   **Action:** In your JavaScript code, place `console.log('Attempting to attach event listener...');` right before `submitButton.addEventListener('click', myFunction);` and `console.log('Event listener attached.');` right after.\n    *   **Check:**\n        *   Do these `console.log` messages appear? If the \"Attempting...\" appears but the \"Event listener attached.\" does not, there might be an issue with `submitButton` (e.g., it was `null` from step 3).\n        *   **Advanced:** In the Elements tab of DevTools, select your button. In the right-hand panel, go to the \"Event Listeners\" tab. It should list a 'click' event listener attached to your button, pointing to your function.\n\n5.  **Debug the Click Handler Function:**\n    *   **Action:** Inside the function that's supposed to execute when the button is clicked (e.g., `myFunction` in `addEventListener('click', myFunction)`), add `console.log(\"Button clicked! Executing handler...\");` as the very first line.\n    *   **Check:**\n        *   Click the button. Does \"Button clicked! Executing handler...\" appear in the console?\n        *   If it *does* appear, the event listener is working correctly, and the problem lies *within the logic of that function*. Step through your function's code line-by-line using breakpoints in the DevTools \"Sources\" tab to see where it might be exiting early or failing silently.\n        *   If it *does not* appear, then the event listener is not firing, or the handler is not being called \u2013 re-check steps 3 and 4 thoroughly.\n\n6.  **Handle Form Submission Default Behavior (if applicable):**\n    *   **Action:** If your button is inside a `<form>` tag and has `type=\"submit\"` (or no `type` specified, making it default to submit), the browser's default behavior is to submit the form and reload the page. This can prevent your JavaScript from visibly executing or completing.\n    *   **Fix:** In your click handler function, make sure it accepts the `event` object and calls `event.preventDefault();` as the first line.\n        ```javascript\n        submitButton.addEventListener('click', function(event) {\n            event.preventDefault(); // Stop default form submission\n            console.log(\"Form submission prevented, custom logic running!\");\n            // Your custom logic here\n        });\n        ```",
+        "status": "Open"
+    },
+    {
+        "id": 22,
+        "title": "rgrdhb",
+        "description": "trytr",
+        "summary": "I understand you're looking for a technical solution. However, the provided bug title \"rgrdhb\" and description \"trytr\" do not contain any actionable information about a specific software bug.\n\nTo provide a clear, step-by-step technical solution, I would need details such as:\n\n*   **Specific error messages or stack traces**\n*   **The component or feature experiencing the bug**\n*   **Steps to reproduce the bug**\n*   **Expected behavior vs. actual behavior**\n*   **Relevant code snippets**\n*   **The environment (OS, programming language, framework, database, etc.)**\n\nPlease provide more details about the bug, and I will be happy to offer a targeted solution.",
+        "status": "Open"
+    },
+    {
+        "id": 23,
+        "title": "hii",
+        "description": "drgf",
+        "summary": "To provide a technical solution, more detailed information about the bug is required. The current bug title (\"hii\") and description (\"drgf\") are placeholders and do not contain enough context to diagnose or fix a specific issue.\n\nPlease provide the following comprehensive details to allow for a proper technical solution:\n\n1.  **Actual Bug Title:** A concise, descriptive title that clearly summarizes the problem.\n2.  **Detailed Description:** A thorough explanation of the issue, including:\n    *   What exactly is failing or behaving unexpectedly?\n    *   When does this issue occur (e.g., on page load, after specific user interaction)?\n    *   What is the impact of this bug (e.g., data loss, UI broken, functionality unavailable)?\n3.  **Steps to Reproduce:** A clear, numbered list of actions that consistently lead to the bug. Include any specific data, user roles, or configurations necessary.\n4.  **Expected Behavior:** Describe what *should* happen when following the steps to reproduce.\n5.  **Actual Behavior:** Describe precisely what *does* happen, including any error messages, incorrect data, or unexpected UI changes.\n6.  **Environment Details:**\n    *   Operating System (e.g., Windows 10, macOS Ventura)\n    *   Browser and Version (e.g., Chrome 120, Firefox 119)\n    *   Application Version/Build Number\n    *   Relevant Server/Database Versions (if applicable)\n    *   Any specific hardware or network conditions.\n7.  **Screenshots, Videos, or Logs:** Attach any visual aids or relevant log files (console logs, server logs) that help illustrate the problem.\n\nOnce these details are provided, a specific, actionable, step-by-step solution can be formulated.",
+        "status": "Open"
+    },
+    {
+        "id": 24,
+        "title": "rhfb",
+        "description": "drfh",
+        "summary": "Given the provided bug title \"rhfb\" and description \"drfh\" are placeholder values and do not contain any information about an actual bug, it is impossible to provide a technical solution.\n\nTo fix the *actual* bug, please provide a meaningful title and detailed description. Once that information is available, a targeted solution can be developed.\n\n**Proposed Steps to Get a Solution (based on current input):**\n\n1.  **Update Bug Title:** Replace \"rhfb\" with a concise, descriptive title that summarizes the issue (e.g., \"Login button unresponsive on iOS,\" \"Database connection failing after upgrade,\" \"Incorrect data displayed in user profile\").\n2.  **Update Bug Description:** Replace \"drfh\" with a detailed explanation including:\n    *   **What is happening?** (The actual problem observed)\n    *   **What should be happening?** (The expected behavior)\n    *   **Steps to reproduce:** A clear, numbered list of actions that consistently lead to the bug.\n    *   **Environment:** Relevant details like OS, browser, application version, database version, etc.\n    *   **Impact/Severity:** How critical is this bug?\n    *   **Any error messages:** Full text of any console errors, log entries, or UI error messages.\n3.  **Submit Updated Information:** With the complete details, a technical solution can then be accurately formulated.",
+        "status": "Open"
     }
 ]

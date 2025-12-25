@@ -11,12 +11,14 @@ from dotenv import load_dotenv
 
 load_dotenv() # Load variables from .env
 
-# 🪄 Loaded from .env file
-HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY")
+import google.generativeai as genai
 
-# Using a generative model for bug solving
-API_URL = "https://router.huggingface.co/hf-inference/models/mistralai/Mistral-7B-Instruct-v0.2"
-HEADERS = {"Authorization": f"Bearer {HUGGINGFACE_API_KEY}"}
+# 🪄 Loaded from .env file
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+# Configure Gemini
+genai.configure(api_key=GEMINI_API_KEY)
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 BUGS_FILE = "bugs.json"
 
@@ -50,30 +52,20 @@ def add_bug():
         if not title or not description:
             return jsonify({"error": "Title and description are required"}), 400
 
-        # --- Call Hugging Face for Solution ---
+        # --- Call Gemini for Solution ---
         solution = "No solution found."
         try:
-            # Crafting a prompt for the instructor model
-            prompt = f"<s>[INST] You are a highly skilled software developer. Provide an exact, step-by-step technical solution to solve this bug:\n\nTitle: {title}\nDescription: {description}\n\nSolution: [/INST]"
-            payload = {
-                "inputs": prompt,
-                "parameters": {"max_new_tokens": 500, "temperature": 0.7}
-            }
-            response = requests.post(API_URL, headers=HEADERS, json=payload, timeout=20)
+            prompt = f"""
+            You are a highly skilled software developer. 
+            Provide a clear, step-by-step technical solution to fix the following bug.
             
-            if response.status_code == 200:
-                result = response.json()
-                if isinstance(result, list) and len(result) > 0:
-                    generated_text = result[0].get("generated_text", "")
-                    # Extract only the part after the prompt
-                    if "[/INST]" in generated_text:
-                        solution = generated_text.split("[/INST]")[1].strip()
-                    else:
-                        solution = generated_text
-            elif response.status_code == 401:
-                solution = "HuggingFace API Key invalid or not provided."
-            else:
-                solution = f"HuggingFace error: {response.status_code}"
+            Bug Title: {title}
+            Description: {description}
+            
+            Format the solution as a numbered list of steps. Keep it concise/actionable.
+            """
+            response = model.generate_content(prompt)
+            solution = response.text
         except Exception as e:
             solution = f"Could not generate solution: {str(e)}."
 

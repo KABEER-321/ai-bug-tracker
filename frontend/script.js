@@ -23,8 +23,8 @@ async function fetchBugs() {
                 </div>
                 <p class="bug-desc">${escapeHTML(bug.description)}</p>
                 <div class="summary-box">
-                    <div class="summary-label">Technical Solution Steps</div>
-                    <p>${escapeHTML(bug.summary)}</p>
+                    <div class="summary-label">Technical Solution</div>
+                    <div class="markdown-content">${marked.parse(bug.summary)}</div>
                 </div>
             </div>
         `).join("");
@@ -49,7 +49,7 @@ async function submitBug() {
     // UI Feedback
     const originalBtnContent = submitBtn.innerHTML;
     submitBtn.disabled = true;
-    submitBtn.innerHTML = `<div class="loading-spinner"></div> <span>Generating Solution Steps...</span>`;
+    submitBtn.innerHTML = `<div class="loading-spinner"></div> <span>Asking Gemini for Solution...</span>`;
 
     try {
         const res = await fetch(`${API_BASE}/bugs`, {
