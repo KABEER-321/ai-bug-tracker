@@ -38,6 +38,10 @@ def save_bugs(bugs):
     with open(BUGS_FILE, "w") as f:
         json.dump(bugs, f, indent=4)
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"message": "AI Bug Tracker API is running!", "endpoints": ["/bugs"]})
+
 @app.route("/bugs", methods=["GET"])
 def get_bugs():
     return jsonify(load_bugs())
