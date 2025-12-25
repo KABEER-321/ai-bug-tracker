@@ -44,7 +44,14 @@ def home():
 
 @app.route("/bugs", methods=["GET"])
 def get_bugs():
-    return jsonify(load_bugs())
+    user_id = request.args.get('user_id')
+    if not user_id:
+        return jsonify([]) # Return nothing if no user_id provided
+    
+    all_bugs = load_bugs()
+    # Filter bugs that belong to this user
+    user_bugs = [b for b in all_bugs if b.get('user_id') == user_id]
+    return jsonify(user_bugs)
 
 @app.route("/bugs", methods=["POST"])
 def add_bug():
@@ -52,9 +59,10 @@ def add_bug():
         data = request.get_json()
         title = data.get("title", "")
         description = data.get("description", "")
+        user_id = data.get("user_id", "") # Get the device ID
 
-        if not title or not description:
-            return jsonify({"error": "Title and description are required"}), 400
+        if not title or not description or not user_id:
+            return jsonify({"error": "Title, description, and user_id are required"}), 400
 
         # --- Call Gemini for Solution ---
         solution = "No solution found."
@@ -75,9 +83,10 @@ def add_bug():
 
         bug_entry = {
             "id": len(load_bugs()) + 1,
+            "user_id": user_id, # Store the owner
             "title": title,
             "description": description,
-            "summary": solution, # Keeping the key 'summary' for DB compatibility
+            "summary": solution, 
             "status": "Open"
         }
 
