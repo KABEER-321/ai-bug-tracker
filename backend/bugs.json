@@ -1,4 +1,44 @@
-[]{"title": " Login button not working", "description": "When I click the login button on the homepage, nothing happens. No error message is displayed.", "summary": "HuggingFace error: {\"error\":\"Invalid credentials in Authorization header\"}"}
-{"title": "Login button not working", "description": "When I click the login button on the homepage, nothing happens. No error message is displayed.", "summary": "Could not generate summary via Hugging Face: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Read timed out. (read timeout=20). Using fallback."}
-{"title": "Login button not working", "description": "When I click the login button on the homepage, nothing happens. No error message is displayed.", "summary": "Could not generate summary via Hugging Face: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Read timed out. (read timeout=20). Using fallback."}
-{"title": "Login button not working", "description": "When I click the login button on the homepage, nothing happens. No error message is displayed.", "summary": "Could not generate summary via Hugging Face: HTTPSConnectionPool(host='api-inference.huggingface.co', port=443): Read timed out. (read timeout=20). Using fallback."}
+[
+    {
+        "id": 1,
+        "title": "Test Bug",
+        "description": "This is a test bug description to verify the AI summarization works correctly.",
+        "summary": "HuggingFace error: 410",
+        "status": "Open"
+    },
+    {
+        "id": 2,
+        "title": "ewfer",
+        "description": "ffdv",
+        "summary": "HuggingFace error: 410",
+        "status": "Open"
+    },
+    {
+        "id": 3,
+        "title": "After Fix Test",
+        "description": "This is a test description to see if the new model sshleifer/distilbart-cnn-12-6 generates a summary correctly and resolves the 410 error.",
+        "summary": "HuggingFace error: 410",
+        "status": "Open"
+    },
+    {
+        "id": 4,
+        "title": "Final Fix Test",
+        "description": "This is a test to verify if the new API key and router URL finally resolve the summarization issue.",
+        "summary": "HuggingFace error: 403",
+        "status": "Open"
+    },
+    {
+        "id": 5,
+        "title": "Bart Router Test",
+        "description": "Testing if the standard Bart model works with the new router URL and your new API key.",
+        "summary": "HuggingFace error: 403",
+        "status": "Open"
+    },
+    {
+        "id": 6,
+        "title": "Final Success Test",
+        "description": "This is a test to verify if the summarization finally works with the third key and the 2025 router address.",
+        "summary": "This is a test to verify if the summarization finally works with the third key and the 2025 router address. This is a tests to verify that the summarizing finally works. The third key is the key used to connect to the router with the 2025 address. The 2025 address is the address given by the router in 2025.",
+        "status": "Open"
+    }
+]

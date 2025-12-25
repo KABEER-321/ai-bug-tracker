@@ -1,0 +1,16 @@
+# Local environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+ENV/
+
+# Data
+backend/bugs.json
+
+# IDE
+.vscode/
+.idea/
