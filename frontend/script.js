@@ -1,4 +1,4 @@
-const API_BASE = "http://127.0.0.1:5000";
+const API_BASE = "https://ai-bug-tracker-obl1.onrender.com";
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchBugs();
