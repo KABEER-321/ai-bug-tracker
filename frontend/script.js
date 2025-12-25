@@ -1,21 +1,35 @@
 const API_BASE = "https://ai-bug-tracker-obl1.onrender.com";
 
+// Helper: Get or Create Unique Device ID
+function getDeviceId() {
+    let deviceId = localStorage.getItem("bug_tracker_device_id");
+    if (!deviceId) {
+        // Generate a random ID (simple implementation)
+        deviceId = "user_" + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+        localStorage.setItem("bug_tracker_device_id", deviceId);
+    }
+    return deviceId;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     fetchBugs();
 });
 
 async function fetchBugs() {
-    const listElement = document.getElementById("bugs-list");
+    const bugsList = document.getElementById("bugs-list");
     try {
-        const res = await fetch(`${API_BASE}/bugs`);
-        const bugs = await res.json();
+        const deviceId = getDeviceId();
+        const response = await fetch(`${API_BASE}/bugs?user_id=${deviceId}`);
+        const bugs = await response.json();
+
+        bugsList.innerHTML = ""; // Clear existing
 
         if (bugs.length === 0) {
-            listElement.innerHTML = `<p style="text-align: center; color: var(--text-muted);">No bugs reported yet. Be the first!</p>`;
+            bugsList.innerHTML = `<p style="text-align: center; color: var(--text-muted);">No bugs reported yet. Be the first!</p>`;
             return;
         }
 
-        listElement.innerHTML = bugs.reverse().map(bug => `
+        bugsList.innerHTML = bugs.reverse().map(bug => `
             <div class="bug-item">
                 <div class="bug-header">
                     <span class="bug-title">${escapeHTML(bug.title)}</span>
@@ -52,10 +66,17 @@ async function submitBug() {
     submitBtn.innerHTML = `<div class="loading-spinner"></div> <span>Asking Gemini for Solution...</span>`;
 
     try {
+        const deviceId = getDeviceId();
         const res = await fetch(`${API_BASE}/bugs`, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ title, description })
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title,
+                description,
+                user_id: deviceId
+            })
         });
 
         const data = await res.json();
