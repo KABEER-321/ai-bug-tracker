@@ -1,10 +1,10 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import requests
 import json
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static') # Explicitly set static folder
 CORS(app)
 
 from dotenv import load_dotenv
@@ -40,7 +40,12 @@ def save_bugs(bugs):
 
 @app.route("/", methods=["GET"])
 def home():
-    return jsonify({"message": "AI Bug Tracker API is running!", "endpoints": ["/bugs"]})
+    return send_from_directory(app.static_folder, 'index.html')
+
+# Serve other static files (css, js)
+@app.route("/<path:path>")
+def static_files(path):
+    return send_from_directory(app.static_folder, path)
 
 @app.route("/bugs", methods=["GET"])
 def get_bugs():

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Bug Tracker | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🪲 AI Bug Solver</h1>
+            <p class="subtitle">Powered by Google Gemini - Instant Fixes</p>
+        </header>
+
+        <section class="card">
+            <div class="form-group">
+                <label for="title">Bug Title</label>
+                <input type="text" id="title" placeholder="e.g. Navigation menu broken on mobile">
+            </div>
+            <div class="form-group">
+                <label for="description">Detailed Description</label>
+                <textarea id="description"
+                    placeholder="Describe what happened, expected result, and steps to reproduce..."></textarea>
+            </div>
+            <button id="submit-btn" onclick="submitBug()">
+                <span>Submit Bug Report</span>
+            </button>
+        </section>
+
+        <section>
+            <h2 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Reported Bugs</h2>
+            <div id="bugs-list" class="bugs-list">
+                <!-- Bugs will be injected here -->
+                <p style="text-align: center; color: var(--text-muted);">Loading reported bugs...</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
